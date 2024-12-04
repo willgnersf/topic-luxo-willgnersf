@@ -1,18 +1,32 @@
 package main.objects;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Topic {
-    private List preferenciais;
-    private List normais;
+    private List<String> preferenciais;
+    private List<String> normais;
     private int capacidade;
     private int qtdPrefenciais;
 
     public Topic(int capacidade, int qtdPrefenciais){
+        preferenciais = new ArrayList<String>();
+        normais = new ArrayList<String>();
         this.capacidade = capacidade;
         this.qtdPrefenciais = qtdPrefenciais;
+        for(int i = 0; i < capacidade; i++){
+            if(qtdPrefenciais > 0){
+                preferenciais.add("@");
+                qtdPrefenciais--;
+            }
+            else
+                normais.add("=");
+        }
     }
 
     public boolean subir(Passageiro passageiro){
+        if(passageiro.isIdoso()){
+
+        }
         return true;
     }
 
